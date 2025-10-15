@@ -91,9 +91,18 @@
 <li>然后进行渲染<code>npm install hexo-renderer-pug --save</code></li>
 <li>如果没有Stylus渲染器（在package.json中检查）<br><code>npm install hexo-renderer-stylus --save</code></li>
 <li>以上只是安装步骤，但是安装完还需要配置，现在还不能用</li>
-<li>以下部分不一定通用了</li>
-<li>配置建议：</li>
-<li>然后推送到github上，让其自动部署</li>
+<li>由于clone主题仓库的时候带了一个.git的隐藏文件夹，刚练手建议先删了，不然会有警告。如果需要更新这个仓库，再说。</li>
+<li>第一次使用会报错，要先去主题配置文件下找到sidebar的links的list，在该条目下面不能为空，要写一些东西，写一些个人的仓库地址，知乎地址等内容。总之，不允许为空</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # 其他侧边栏配置...</span><br><span class="line">  links:</span><br><span class="line">    enable: true  # 确保侧边栏链接模块「启用」</span><br><span class="line">    title: 我的链接  # 侧边栏链接区域的标题（可自定义）</span><br><span class="line">    list:  # 必须添加「链接名称: 链接地址」的键值对，示例如下：</span><br><span class="line">      GitHub: https://github.com/你的用户名</span><br><span class="line">      个人博客: https://你的博客域名</span><br><span class="line">      知乎: https://www.zhihu.com/people/你的知乎ID</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>另一个报错是搜索插件问题，先<code>npm install hexo-generator-searchdb --save</code>然后需要去根目录的配置文件下面，添加下面几行,注意，yml文件有严格格式要求，缩进要注意，不然依然会报错。（第7点同样也是要注意格式）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 搜索功能配置（用于Meow主题）</span><br><span class="line">search:</span><br><span class="line">  path: search.xml  # 搜索索引文件路径，必须有这个参数</span><br><span class="line">  field: post       # 搜索范围：post（仅文章）、page（仅页面）、all（全部）</span><br><span class="line">  content: true     # 是否搜索文章内容</span><br><span class="line">  format: html      # 内容格式</span><br></pre></td></tr></table></figure>
+<p>回到主题的配置文件，要把search段enable改成true</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  enable: true  # 启用搜索功能</span><br><span class="line">  type: local   # 搜索类型（当前仅支持local）</span><br><span class="line">  local:</span><br><span class="line">    top_n_per_article: 1  # 每篇文章显示的搜索结果条数</span><br><span class="line">    preload: false        # 是否预加载搜索数据</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>然后就是清理缓存，重新生成静态文件，启动服务，最后本地访问看看。</li>
 </ol>
 ]]></content>
       <tags>
