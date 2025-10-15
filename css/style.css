@@ -1802,7 +1802,7 @@ body[data-mode="dark"] .home-article-info .icon {
 }
 .banner-avatar img {
   width: 7.5rem;
-  border-radius: 0;
+  border-radius: 50%;
   object-fit: contain;
   box-sizing: content-box;
   border: none;
