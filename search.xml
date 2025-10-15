@@ -27,8 +27,15 @@
 <p>字体链接应指向字体合集的 css 内容（@font-face），推荐在中文网字计划、Google Fonts 或其它 CDN 寻找字体并加速。</p>
 <p>字体集是一系列字体名称组成的字符串，顺序靠前的字体将被优先使用。建议除自定义导入的字体外再配置一些系统默认字体。</p>
 <ul>
-<li>导航栏</li>
+<li>导航栏<br>这个好像有点复杂，晚点有空研究一下</li>
 </ul>
+<p>导航栏位于网站顶部，支持配置二级折叠目录。</p>
+<p>在小屏设备下，导航栏目录会自动隐藏，点击目录按键才会展开。</p>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  articles || uc-article:</span><br><span class="line">    archives: /archives || uc-archive</span><br><span class="line">    categories: /categories || uc-category</span><br><span class="line">    tags: /tags || uc-tag</span><br><span class="line">  comments: /comments || uc-comment</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>配置格式：</p>
+<p>常规目录项，显示图标：目录名称: 目录链接 || 图标名称<br>常规目录项，不显示图标：目录名称: 目录链接<br>含二级目录的一级目录，显示图标：目录名称 || 图标名称:<br>含二级目录的一级目录，不显示图标：目录名称:<br>二级目录应写在对应的一级目录下并缩进配置，目前最多只支持二级目录。</p>
+<p>目录名称:可以直接配置名称，也可以配置语言文件中存在的英文参数（主题会自动根据网站语言切换显示值）<br>目录链接:站内相对路径或站外链接皆可<br>图标名称:图标的名称，可以在主题目录下的 source&#x2F;assets&#x2F;images&#x2F;svg 中寻找喜欢的图标,也可以自行下载图标到其中的 custom 文件夹内，再用 custom-图标名来应用自定义图标</p>
 ]]></content>
   </entry>
   <entry>
