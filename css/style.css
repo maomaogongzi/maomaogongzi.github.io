@@ -570,7 +570,7 @@ body[data-mode='dark'] {
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  user-select: auto;
+  user-select: none;
 }
 * ::-webkit-scrollbar {
   width: 0.65rem;
