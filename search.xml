@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/03/hello-world/</url>
+    <url>/2025/11/04/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -322,10 +322,34 @@
  <div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//插入操作</span><br><span class="line">// 在双链表中p所指节点之后插入值为e的新节点 </span><br><span class="line">bool DListInsertAfter(DNode *p, ElemType e) &#123; </span><br><span class="line">if (p == NULL) &#123; // p为NULL，无法插入 </span><br><span class="line">return false; &#125;</span><br><span class="line"> DNode *s = (DNode *)malloc(sizeof(DNode)); // 创建新节点s </span><br><span class="line"> if (s == NULL) &#123; // 内存分配失败 </span><br><span class="line"> return false; &#125; </span><br><span class="line"> s-&gt;data = e; // 给新节点赋值</span><br><span class="line">  // 指针调整步骤（严格顺序：①→②→③→④）</span><br><span class="line">  s-&gt;next = p-&gt;next; // ① s的后继指向p的原后继 </span><br><span class="line">  if (p-&gt;next != NULL) &#123; // 若p原来有后继节点，调整其前驱 </span><br><span class="line">  p-&gt;next-&gt;prior = s; // ② p的原后继的前驱指向s </span><br><span class="line">  &#125; </span><br><span class="line">  s-&gt;prior = p; // ③ s的前驱指向p</span><br><span class="line">   p-&gt;next = s; // ④ p的后继指向s</span><br><span class="line">    return true; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
 <ul>
-<li>循环链表（为提高效率，后续内容只记录关键的，或者不会的点）</li>
+<li><strong>循环链表（为提高效率，后续内容只记录关键的，或者不会的点）</strong></li>
+<li>对循环单链表，有时候可能不设头指针，而仅设置尾指针，因为如果设尾指针r，r-&gt;next就是头指针。循环单链表因为是个环，所以任何位置上插入和删除都是等价的，无需判断是否为表尾。判空条件也变为表尾节点* r-&gt;next是否等于头指针</li>
+<li>循环双链表的头结点的prior指向表尾节点，尾节点的next指向头结点。当循环双链表为空时，头结点的prior和next都等于L</li>
+<li><strong>静态链表</strong></li>
+</ul>
+<div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 定义静态链表</span><br><span class="line">#define MaxSize 50</span><br><span class="line">typedef struct &#123; </span><br><span class="line"> ElemType data; </span><br><span class="line"> int next;  </span><br><span class="line">&#125; SLinkList[MaxSize]; </span><br><span class="line"></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+<p> 静态链表以next &#x3D;&#x3D; -1作为结束的标志</p>
+<ul>
+<li>注意顺序表个链表的比较</li>
+<li>该章节代码量较少，所以刚好适合笔试考察，考代码时，用三段论作答</li>
+</ul>
+ <div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.给出算法基本设计思想</span><br><span class="line">2.采用C或C++语言描述算法，并给出注释</span><br><span class="line">3.分析所设计算法的时间复杂度和空间复杂度</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<h2 id="栈、队列、数组"><a href="#栈、队列、数组" class="headerlink" title="栈、队列、数组"></a>栈、队列、数组</h2><ul>
+<li><strong>栈</strong></li>
+<li>栈也是线性表</li>
+<li>栈是后进先出</li>
+<li>顺序栈的底层是数组 <code>data[MaxSize]</code>，数组的下标是<strong>从 <code>0</code> 开始</strong>的，因此它的有效下标范围是 <code>0 ~ MaxSize-1</code>（共 <code>MaxSize</code> 个位置）。所以判断栈满是s.top&#x3D;&#x3D; MaxSize-1,当top是从-1开始的时候。这种情况下是先top+1，在送值进去，但是如果不是-1，情况又不一样了。初始值从0开始，就是先送值在+1</li>
+<li>顺序栈容易溢出</li>
+<li>共享栈，两个栈共用一个空间，top0&#x3D;&#x3D; -1时左边栈为空，top1&#x3D;&#x3D; MaxSize 右边栈为空。两边同时朝对方靠近，当top1-top0&#x3D;1时，为栈满</li>
+<li>栈链式存储中，要看看有没有带头结点</li>
+<li><strong>队列</strong></li>
+<li>先进先出</li>
+<li>栈和队列是操作受限的线性表，但不是任何对线性表的操作都可以作为栈和队列处理，比如不可以随便读取栈和队列中间某个数据</li>
+<li>循环队列（不想记录，太多了，理解后多去看看，主要需要注意队空队满情况，以及区分队空还是队满的三种方式，还有就是入队出队需要取模）</li>
 <li></li>
 </ul>
-]]></content>
+<h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><h2 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
         <tag>理论</tag>
       </tags>
