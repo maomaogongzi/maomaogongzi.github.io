@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/04/hello-world/</url>
+    <url>/2025/11/05/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -346,8 +346,25 @@
 <li><strong>队列</strong></li>
 <li>先进先出</li>
 <li>栈和队列是操作受限的线性表，但不是任何对线性表的操作都可以作为栈和队列处理，比如不可以随便读取栈和队列中间某个数据</li>
+<li>队列的顺序存储</li>
 <li>循环队列（不想记录，太多了，理解后多去看看，主要需要注意队空队满情况，以及区分队空还是队满的三种方式，还有就是入队出队需要取模）</li>
-<li></li>
+<li>队列的链式存储</li>
+</ul>
+<div class="code-container" code-lang="C"><div class="codebox"><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 链式队列的节点结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    ElemType data;           <span class="comment">// 数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span>   <span class="comment">// 指针域，指向下一个节点</span></span><br><span class="line">&#125;LinkNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链式队列的结构体（包含队头、队尾指针）</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    LinkNode *front,*rear;   <span class="comment">// 队头指针和队尾指针</span></span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+<ul>
+<li>双端队列</li>
+<li>多做几题熟悉一下，还有受限双端队列</li>
+<li>栈和队列的应用</li>
+<li>栈–括号匹配</li>
+<li>栈–算数表达式（需要会中缀表达式转到后缀表达式的手算方式，其中后缀表达式进行求值用的是栈，要知道逻辑）</li>
+<li>栈–递归</li>
+<li>队列–层次遍历</li>
+<li>计算机系统的应用（打印机缓冲区–队列，CPU资源争抢–队列）</li>
+<li>数组和特殊矩阵(题目里可能会有，要做几道感受一下)</li>
+<li>数组就是计算机数组的底层逻辑，其实就是一片空间，数组怎么一个个放进去，二维数组等，看起来是二维，实际上就是几个一组几个一组放进去的。但是要注意是按行优先还是按列优先</li>
+<li>特殊矩阵就是线性代数里面一些特殊矩阵，压缩存储值得是多个值相同的元素只用一个存储空间。对0元素直接不分配空间。其实就是对称矩阵这种东西，可以只存一半数据而不是存一大堆。</li>
+<li>需要注意的是，数组是从0开始的，但是矩阵是从$a_{11}$开始的</li>
+<li>存储稀疏矩阵时，由于非零元素很少，且分布不均匀，所以要记录行列和值，而不光光是值。因此没有随机存取特性</li>
 </ul>
 <h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><h2 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
