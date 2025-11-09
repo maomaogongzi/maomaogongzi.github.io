@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/05/hello-world/</url>
+    <url>/2025/11/09/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -366,7 +366,18 @@
 <li>需要注意的是，数组是从0开始的，但是矩阵是从$a_{11}$开始的</li>
 <li>存储稀疏矩阵时，由于非零元素很少，且分布不均匀，所以要记录行列和值，而不光光是值。因此没有随机存取特性</li>
 </ul>
-<h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><h2 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
+<h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><ul>
+<li>子串是主串任意多个连续的字符组成的</li>
+<li>子串在主串中的位置以子串的第一个字符在主串中的位置来表示</li>
+<li>串中字符的个数称为串的长度</li>
+<li>当两个串长度相等且每个对应位置字符都相等时，这两个串相等。</li>
+<li>例如，有串 A&#x3D;’China Beijing’，B&#x3D;’Beijing’，C&#x3D;’China’，则它们的长度分别为 13、7 和 5。B 和 C 是 A 的子串，B 在 A 中的位置是 7，C 在 A 中的位置是 1。</li>
+<li>注意，由一个或多个空格（空格是特殊字符）组成的串称为空格串（空格串不是空串），其长度为串中空格字符的个数。</li>
+<li>串的模式匹配要会算（简单模式匹配和KMP算法）</li>
+<li>KMP算法，已匹配过的串里面有模式串前缀，可以不必再回溯，而是直接从能匹配的前缀对其，继续测。模式串滑动是便于理解，但实际上是指针，next数组（有些复杂要会手算）</li>
+<li></li>
+</ul>
+<h2 id="树与二叉树"><a href="#树与二叉树" class="headerlink" title="树与二叉树"></a>树与二叉树</h2><h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
         <tag>理论</tag>
       </tags>
