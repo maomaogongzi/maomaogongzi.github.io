@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/16/hello-world/</url>
+    <url>/2025/11/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -475,7 +475,32 @@
 <li><strong>并查集</strong></li>
 <li></li>
 </ul>
-<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><ul>
+<li>线性表可以是空表，数可以是空树，但图不可以是空图，即图中一定要有一个顶点，但是边集可以为空。顶点集不可以。G图，V顶点，E边，G（V，E）</li>
+<li>有向图，即E有方向，也称弧。&lt;1,2&gt;   即1到2的方向</li>
+<li>无向图，若E为无向边，简称边。（1,2）</li>
+<li>简单图，即不存在重复边，不存在顶点指向自己的边</li>
+<li>多重图，两点间边数大于一，且又允许顶点通过一条边和自己关联。</li>
+<li>无向图全部的顶点的度之和等于边数的两倍。</li>
+<li>有向图，分入度和出度，度为入度和出度之和。有向图的全部顶点入度和出度之和相等。且等于边数</li>
+<li>顶点与顶点之间的路径上边的数目称为路径长度。若n个顶点，有大于n-1条边，则此图一定有环。</li>
+<li><strong>简单路径</strong>，顶点不重复的路径，简单回路，除了第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为<strong>简单回路</strong>。</li>
+<li>距离为两顶点的最短路径，若没有路径，那距离为无穷。</li>
+<li><strong>子图</strong>，顶点是主图顶点的子集，边是主图边的子集，但是需要注意，并不是任意一个顶点子集和边子集就能称为子图，因为可能不构成图，需要这条边的两个顶点都在顶点子集中。</li>
+<li>如果两个图的顶点是一样的，那么称为子图同时为<strong>生成子图</strong>。即顶点全保留，边随便选。</li>
+<li>无向图中，两个顶点路径存在，那么这两顶点就是连通的。如果任意两个顶点都是连通的，那么这个图为<strong>连通图</strong>。无向图中的极大连通子图为<strong>连通分量</strong>。</li>
+<li>如果一个图是n个顶点，边数小于n-1条边，那一定不连通。</li>
+<li>如果一个图是非连通图，那么最多可以多少条边？这个问题可以理解为，顶点n，先去掉一个顶点，变成完全图（全连接，n-1个顶点，每条都能连接n-2条边，然后由于出现重复的了，所以除以2），然后加上这个顶点就变成非连通图。</li>
+<li>注意，<strong>无向图中讨论连通性，有向图中讨论强连通性</strong>。</li>
+<li>两个顶点互相有路径，称为强连通，a-&gt;b,b-&gt;a。若有向图中任意一对顶点都是强连通的，那就是强连通图。有向图中极大强连通子图为有向图的强连通分量。</li>
+<li>n个顶点，如果是个强连通图，最少需要多少边？n条，变成一个环就行。</li>
+<li><strong>生成树</strong>是包含图中所有顶点的极小连通子图，减去一条边就会变成非连通图，加上一条边就会变成回路。非连通图中，连通分量的生成树构成了非连通图的生成森林。</li>
+<li>在一个图中，每条边都可以标上具有某种含义的值，为权值，这个是带权图，也称网。路径上所有边的权值之和，称为该路径的带权路径长度。</li>
+<li>完全图任意两个顶点之间都存在边。</li>
+<li>稠密图，稀疏图，是相对而言的。</li>
+<li>有向数，一个顶点入度为0，其余顶点入度均为1的有向图。</li>
+</ul>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
         <tag>理论</tag>
       </tags>
