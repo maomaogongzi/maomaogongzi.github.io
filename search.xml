@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/28/hello-world/</url>
+    <url>/2025/11/30/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -515,6 +515,20 @@
 <li>稠密图适合用邻接矩阵</li>
 <li><strong>邻接矩阵A，$A^n$的元素$A^n$ [i]  [j] 为i到j长度为n的路径长度</strong></li>
 <li><strong>邻接表法</strong></li>
+<li>顶点和边表头指针用顺序存储，称为顶点表，边表用链式存储</li>
+<li>存在两种节点，一种是顶点表节点，一种是边表结点</li>
+<li>顶点表结点包括顶点域（存储顶点v）和边表头指针域（指向第一条边的边表节点）</li>
+<li>边表节点至少两个域，邻接点域，存储与头结点顶点v邻接的顶点编号，指针域只想下一条边的边表节点</li>
+<li>适用于稀疏图</li>
+<li>邻接表中给定一个顶点，能找到它所有邻边。而邻接矩阵在找所有领边需要扫描一行。但是若要确定给定俩顶点是否存在边，则在邻接矩阵中立刻能查到。而在邻接表则需要边表中查找另一结点</li>
+<li>无向图和有向图的领接表中，找无向图的度和有向图的出度，只要计算邻接表边表节点个数就行。但是对于有向图来说，求它的入度，则需要编译全部邻接表，统计邻接点域为x的边表节点个数</li>
+<li>邻接表不唯一，因为链接次序是任意的。</li>
+<li><strong>十字链表</strong>（不好理解，但仔细看能看懂）</li>
+<li>有向图的链式存储结构</li>
+<li>弧结点（弧尾节点编号，弧头结点编号，和弧头结点相同的下一条弧，和弧尾相同的下一条弧，弧信息）和顶点节点（顶点信息，指向该顶点的弧，以该结点为弧尾的第一条弧）</li>
+<li>十字链表中，容易找到以v为头的弧，也容易找到v为尾的弧，容易求得顶点的出度与入度，十字链表不是唯一的，但是一个十字链表确定一个图</li>
+<li><strong>邻接多重表</strong></li>
+<li></li>
 </ul>
 <h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
