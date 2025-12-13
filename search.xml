@@ -142,7 +142,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2025/11/30/hello-world/</url>
+    <url>/2025/12/13/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" code-lang="Bash"><div class="codebox"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 
@@ -527,8 +527,36 @@
 <li>有向图的链式存储结构</li>
 <li>弧结点（弧尾节点编号，弧头结点编号，和弧头结点相同的下一条弧，和弧尾相同的下一条弧，弧信息）和顶点节点（顶点信息，指向该顶点的弧，以该结点为弧尾的第一条弧）</li>
 <li>十字链表中，容易找到以v为头的弧，也容易找到v为尾的弧，容易求得顶点的出度与入度，十字链表不是唯一的，但是一个十字链表确定一个图</li>
-<li><strong>邻接多重表</strong></li>
-<li></li>
+<li>弧尾就是箭尾，弧头就是箭头</li>
+<li><strong>邻接多重表</strong>（有空在回头补补吧，多看两遍就会了，不难，记不住倒是真的）</li>
+<li>是无向图的链式存储方式</li>
+<li>也是有顶点节点和边结点</li>
+<li>图的四种存储方式总结<ul>
+<li>空间复杂度需要看看</li>
+<li>找相邻边有十字链表和邻接多重表很方便</li>
+<li>删除边和顶点，删除边邻接矩阵方便，但是删除顶点需要移动大量数据。领接表两者都不方便，十字链表和邻接多重表都方便</li>
+<li>邻接矩阵适合稠密图，邻接表适合稀疏图和其他。十字链表只适合有向图，邻接多重表只能存无向图</li>
+<li>邻接矩阵唯一，其他都不唯一</li>
+</ul>
+</li>
+</ul>
+<h4 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h4><ul>
+<li>广度优先搜索（BFS）<ul>
+<li>类似于树的层序遍历</li>
+<li>入队，队列非空，出队，入队刚才那个结点相邻结点</li>
+<li>最坏情况下，空间复杂度O(|V|)</li>
+</ul>
+</li>
+<li>深度优先搜索（DFS  Depth）<ul>
+<li>类似于树的先序遍历</li>
+<li>一直往下访问，当无法再继续向下访问时，依次退回到最近被访问的顶点。然后继续重复搜索，直到搜完。</li>
+</ul>
+</li>
+</ul>
+<h4 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h4><ul>
+<li>最小生成树，包含所有顶点并且尽可能边少。砍去一条边变成飞连通图，增加一条边会形成回路</li>
+<li>而对于带权图，权值最小的那棵生成树为最小生成树</li>
+<li>(先这样吧，后面没心情看了，有机会继续学习)</li>
 </ul>
 <h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
       <tags>
