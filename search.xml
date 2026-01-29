@@ -130,12 +130,18 @@
 </ul>
 <div class="code-container" code-lang="Plaintext"><div class="codebox"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 通用属性</span><br><span class="line">lang: en # 界面语言</span><br><span class="line">comment: true # 是否开启评论区</span><br><span class="line"></span><br><span class="line"># Page页面属性</span><br><span class="line">count: true # 是否开启页面访问量统计（显示在右上角）</span><br><span class="line"></span><br><span class="line"># Post文章属性</span><br><span class="line">sticky: 20 # 在首页置顶文章，参数值是置顶优先级</span><br><span class="line">cover: https://xxx.com/xxxx.jpeg # 文章封面，参数值为封面图链接</span><br><span class="line">thumbnail: true # 是否在归档页显示文章封面</span><br><span class="line">excerpt: content # 自定义文章摘要，false则不显示摘要</span><br><span class="line">toc: true # 是否生成文章TOC目录</span><br><span class="line">author: name # 设置作者名称，默认使用根目录配置中的作者名</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
 ]]></content>
+      <categories>
+        <category>hexo使用手册</category>
+      </categories>
   </entry>
   <entry>
     <title>Obsidian的主题设置</title>
     <url>/2025/10/21/Obsidian%E7%9A%84%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<p>本次使用的Obsidian主题在仓库中，<code>sorce/_posts</code>中,因为在本地编辑的时候就是用的这个Obsidian仓库，所以主题下载也会自动放在这，为了符合自己的使用习惯，如果新建一个Obsidian仓库，可以先把<code>.obsidian/themes</code>拷贝一份到新仓库里，就能使用以前习惯用的主题。<br>目前比较喜欢的是<code>ITS Theme</code><br>后续待更新…</p>
 ]]></content>
+      <categories>
+        <category>Obsidian主题迁移</category>
+      </categories>
       <tags>
         <tag>Obsidian主题设置</tag>
       </tags>
@@ -157,6 +163,9 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a>  </p>
 ]]></content>
+      <categories>
+        <category>hexo使用手册</category>
+      </categories>
   </entry>
   <entry>
     <title>hexo文章快速生成指令查阅</title>
@@ -250,8 +259,10 @@
 
 
 ]]></content>
+      <categories>
+        <category>hexo使用手册</category>
+      </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>首次安装</tag>
       </tags>
   </entry>
@@ -260,6 +271,9 @@
     <url>/2025/10/21/test/</url>
     <content><![CDATA[<p>这篇文章我主要是用来看看我的主题效果,加了一些front-matter</p>
 ]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
       <tags>
         <tag>测试</tag>
       </tags>
@@ -268,6 +282,12 @@
     <title>写给全人类的数学魔法书</title>
     <url>/2026/01/29/%E5%86%99%E7%BB%99%E5%85%A8%E4%BA%BA%E7%B1%BB%E7%9A%84%E6%95%B0%E5%AD%A6%E9%AD%94%E6%B3%95%E4%B9%A6/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
   </entry>
   <entry>
     <title>计算机问题</title>
@@ -564,8 +584,11 @@
 <li>(先这样吧，后面没心情看了，有机会继续学习)</li>
 </ul>
 <h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2>]]></content>
+      <categories>
+        <category>考研笔记</category>
+      </categories>
       <tags>
-        <tag>理论</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
